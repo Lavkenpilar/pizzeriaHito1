@@ -100,3 +100,25 @@ button:focus-visible {
   height: 6vh;
   background-color: #1a1a1a;
 }
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error1{
+  padding: 10px;
+  color: white;
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.error2{
+  padding: 10px;
+  color: white;
+  background-color: orangered;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+}
