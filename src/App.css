@@ -47,10 +47,28 @@
   border: solid 1px black;
   margin: 0 auto;
 }
-.cards {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0 auto;
 
+.galeria {
+display: grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+padding:20px;
+justify-items:center;
 }
+
+.cardPizza {
+  width:100%;
+  max-width:300px;
+  border:1px solid #ddd;
+  border-radius:15px;
+  padding:15px;
+  text-align:center;
+  box-shadow: 0 4px 8px rgba (0 0 0 0,2);
+}
+
+.cardPizza img {
+  width:100%;
+  height:auto;
+  border-radius:8px;
+}
+

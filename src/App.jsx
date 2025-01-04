@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'*/
 import Navbar_hito from './components/Navbar_hito';
 import Home from './components/Home';
 import Footer from './components/Footer';
-import Register from './components/Register';
-import Login from './components/Login';
+//import Register from './components/Register';
+//import Login from './components/Login';
 
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
   return (
     <>
       <Navbar_hito/>
-      <Register/>
-     {/* <Home/>*/}
+      {/*<Register/>*/}
+      <Home/>
     {/* <Login/>*/}
       <Footer/>
    

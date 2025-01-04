@@ -1,36 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header_hito from './Header'
-import CardPizza from './CardPizza';
-
-
+import CardPizza from './CardPizza'
+import { pizzas } from '../pizzas.js'
 
 
 const Home = () => {
+  console.log (pizzas)
+ /* const [listaPizzas, setListaPizzas] = useState (pizzas)*/
+ /* const listaPizzas = [...pizzas]*/
   return (
     <>
     <Header_hito/>
-    <div className='cards'>
-    <CardPizza
-    name="Napolitana"
-    price={5950}
-    ingredients=" 🍕Mozzarella, tomates, jamón, oregano"
-    img="/assets/img/napolitana2.png"
-   />
-    <CardPizza
-    name="Española"
-    price={6950}
-    ingredients="🍕Mozzarella, gorgonzola, parmesano, provolone"
-    img="/assets/img/espanola.png" 
-   />
-    <CardPizza
-    name="Pepperoni"
-    price={6950}
-    ingredients="🍕Mozzarella, pepperoni, oregano"
-    img="/assets/img/peperoni.png" 
-   />
+    <div className = "galeria">
+    {pizzas.map ((pizza)=>(
+    <CardPizza className = "cardPizza"
+    key={pizza.id}
+    price={pizza.price}
+    img={pizza.img}
+    id={pizza.id}
+    name={pizza.name}
+    desc={pizza.desc}
+    ingredients = {pizza.ingredients}
+    />  
+    ))}
    </div>
   </>
-  )
-}
+   )
+  }
 
 export default Home
