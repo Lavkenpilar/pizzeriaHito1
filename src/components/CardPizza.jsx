@@ -20,7 +20,12 @@ const CardPizza = ({price, img, id, name, desc, ingredients}) => {
           </div>
           <br/>
           <div className="ingredientes">
-          <p><strong>Ingredientes:</strong> {ingredients.join(", ")}</p>
+          <strong>Ingredientes:</strong>
+          <ul>
+          {ingredients.map ((ingredient, indice) => (
+            <li key={indice}>{ingredient}</li>
+          ))}
+          </ul>
           </div>
         </Card.Text>
       </Card.Body>

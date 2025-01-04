@@ -5,7 +5,7 @@ import { pizzas } from '../pizzas.js'
 
 
 const Home = () => {
-  console.log (pizzas)
+ /* console.log (pizzas)*/
  /* const [listaPizzas, setListaPizzas] = useState (pizzas)*/
  /* const listaPizzas = [...pizzas]*/
   return (
