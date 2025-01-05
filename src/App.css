@@ -72,3 +72,39 @@ justify-items:center;
   border-radius:8px;
 }
 
+.d-flex {
+  padding: 20px;
+  gap:20px;
+}
+.div-nombre {
+  padding-right: 100px;
+
+}
+.titulo-cart {
+  display: flex;
+  padding-top: 20px;
+}
+.boton-suma-cart {
+  border-radius: 10px;
+  border-color: red;
+}
+.boton-menos-cart {
+  border-radius: 10px;
+  border-color: blue;
+}
+.total-cart {
+  display: flex;
+  padding-top: 20px;
+}
+.subtitulo-total {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.boton-pagar {
+  display: flex;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  margin-bottom: 30px;
+}

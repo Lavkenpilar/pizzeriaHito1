@@ -18,7 +18,7 @@ function App() {
     <>
       <Navbar_hito/>
       {/*<Register/>*/}
-      {/*<Home/>*/}
+      <Home/>
     {/* <Login/>*/}
     <Cart/>
       <Footer/>
