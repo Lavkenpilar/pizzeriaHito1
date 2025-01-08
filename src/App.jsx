@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 /*import ReactDOM from 'react-dom'
@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 //import Register from './components/Register';
 //import Login from './components/Login';
 import Cart from './components/Cart'
+import Pizza from './components/Pizza';
 
 
 function App() {
@@ -18,9 +19,10 @@ function App() {
     <>
       <Navbar_hito/>
       {/*<Register/>*/}
-      <Home/>
+     <Home/>
     {/* <Login/>*/}
-    <Cart/>
+    {/*<Cart/>*/}
+   {/*<Pizza/>*/}
       <Footer/>
    
 </>

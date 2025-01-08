@@ -1,18 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header_hito from './Header'
 import CardPizza from './CardPizza'
-import { pizzas } from '../pizzas.js'
+//import { pizzas } from '../pizzas.js'
 
 
 const Home = () => {
  /* console.log (pizzas)*/
  /* const [listaPizzas, setListaPizzas] = useState (pizzas)*/
  /* const listaPizzas = [...pizzas]*/
-  return (
-    <>
-    <Header_hito/>
+ const [info, setInfo]=useState([])
+
+useEffect (()=>{
+  fetch ('http://localhost:5000/api/pizzas')
+  .then((res)=>res.json())
+  .then ((data)=>{
+    setInfo(data)
+   // console.log (data)
+  })
+  },[])
+ 
+
+return (
+  <>
+  
+  <Header_hito/>
     <div className = "galeria">
-    {pizzas.map ((pizza)=>(
+    {info.map ((pizza)=>(
     <CardPizza className = "cardPizza"
     key={pizza.id}
     price={pizza.price}
@@ -25,7 +38,7 @@ const Home = () => {
     ))}
    </div>
   </>
-   )
+)
   }
 
 export default Home
