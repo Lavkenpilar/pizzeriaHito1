@@ -7,10 +7,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import ReactDOM from 'react-dom';
 import formatNumber from '../utils/formatNumber';
+import { Link } from 'react-router-dom';
 
 
 const Navbar_hito = () => {
-  const total = 25000
+  const total = 19190
      let token = false
     const text1= "🔐Login"
     const text2= "🔐Register"
@@ -24,11 +25,11 @@ const Navbar_hito = () => {
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav className="me-auto Navbar-var"> 
-          <Nav.Link href="#action1"  style={{ border: '1px solid white', marginRight:'8px', color:'white', borderRadius:'6px'}}>🍕Home</Nav.Link>
-          <Nav.Link href="#action2" style={{ border: '1px solid white', marginRight:'8px', color:'white', borderRadius:'6px'}}>{ token === false ? text1:text3}</Nav.Link>
-          <Nav.Link href="#action2" style={{ border: '1px solid white', marginRight:'8px', color:'white', borderRadius:'6px' }}>{ token === false ? text2:text4}</Nav.Link>
+          <Link to={"/"}  className="text-white ms-3 text-decoration-none">🍕Home</Link>
+          <Link to={token===false?"/login":"/profile"}  className="text-white ms-3 text-decoration-none">{ token === false ? text1:text3}</Link>
+          <Link to={token===false?"/register":"/logout"} className="text-white ms-3 text-decoration-none">{ token === false ? text2:text4}</Link>
           </Nav>
-        <Button variant="outline-primary">🛒Total:{formatNumber(total)}</Button>
+        <Link to={"/cart"} className='btn btn-primary'>🛒Total:{formatNumber(total)}</Link>
       </Navbar.Collapse>
     </Container>
   </Navbar>

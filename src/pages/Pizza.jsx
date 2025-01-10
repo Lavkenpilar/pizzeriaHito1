@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Header_hito from './Header'
-import CardPizza from './CardPizza'
-
+import CardPizza from '../components/CardPizza'
 
 const Pizza = () => {
 
@@ -18,7 +16,7 @@ const Pizza = () => {
     
   return (
     <>
-    <Header_hito/>
+    
     <div className = "galeria">
     {pizza.id ? (
     <CardPizza className = "cardPizza"

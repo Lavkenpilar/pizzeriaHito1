@@ -108,3 +108,13 @@ justify-items:center;
   color: white;
   margin-bottom: 30px;
 }
+.titulo-profile {
+  color:darkblue;
+  margin: 60px;
+}
+.boton-profile {
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  margin-bottom: 30px;
+}

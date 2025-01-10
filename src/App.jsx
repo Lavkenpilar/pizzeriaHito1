@@ -1,15 +1,19 @@
+import { Route, Routes} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-/*import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'*/
+/*import ReactDOM from 'react-dom'*/
 import Navbar_hito from './components/Navbar_hito';
-import Home from './components/Home';
+import Header_hito from './components/Header'
+import Home from './pages/Home'
 import Footer from './components/Footer';
-//import Register from './components/Register';
-//import Login from './components/Login';
-import Cart from './components/Cart'
-import Pizza from './components/Pizza';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Cart from './pages/Cart'
+import Pizza from './pages/Pizza';
+import NotFound from "./components/NotFound";
+import Profile from "./components/Profile";
+
 
 
 function App() {
@@ -18,13 +22,38 @@ function App() {
   return (
     <>
       <Navbar_hito/>
-      {/*<Register/>*/}
-     <Home/>
-    {/* <Login/>*/}
-    {/*<Cart/>*/}
-   {/*<Pizza/>*/}
-      <Footer/>
-   
+      <Header_hito/>
+      <Routes>
+        <Route
+        path="/"
+        element = {<Home/>}
+        />
+        <Route
+        path="/register"
+        element={<Register/>}
+        />
+        <Route
+        path="/login"
+        element={<Login/>}
+        />
+        <Route
+        path="/cart"
+        element=  {<Cart/>}
+        />
+        <Route
+        path="/pizza/001"
+        element={<Pizza/>}
+        />
+        <Route
+        path="/profile"
+        element={<Profile/>}
+        />
+        <Route
+        path="/*"
+        element={<NotFound/>}
+        />
+   </Routes>
+      <Footer/>   
 </>
   )
 }

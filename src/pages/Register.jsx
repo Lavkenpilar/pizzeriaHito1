@@ -33,7 +33,7 @@ alert ('Formulario enviado con éxito')
     <Form className='formulario' onSubmit={validarDatos}>     
     <Form.Group className="mb-3 mt-5" controlId="formBasicEmail" >
     {error&& <p className='error1'>{error}</p>}  
-      <h1>Login</h1>     
+      <h1>Register</h1>     
       <Form.Label>Email address</Form.Label>
       <Form.Control type="email" placeholder="Enter email"  onChange={(e)=>setEmail(e.target.value)}
       value={email} />

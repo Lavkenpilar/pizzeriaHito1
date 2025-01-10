@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Header_hito from './Header'
-import CardPizza from './CardPizza'
+import CardPizza from '../components/CardPizza'
 //import { pizzas } from '../pizzas.js'
 
 
@@ -21,9 +20,7 @@ useEffect (()=>{
  
 
 return (
-  <>
   
-  <Header_hito/>
     <div className = "galeria">
     {info.map ((pizza)=>(
     <CardPizza className = "cardPizza"
@@ -37,7 +34,7 @@ return (
     />  
     ))}
    </div>
-  </>
+  
 )
   }
 
