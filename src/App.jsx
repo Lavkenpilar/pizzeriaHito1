@@ -2,6 +2,7 @@ import { Route, Routes} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartProvider from "./context/CartContext";
 /*import ReactDOM from 'react-dom'*/
 import Navbar_hito from './components/Navbar_hito';
 import Header_hito from './components/Header'
@@ -20,7 +21,8 @@ function App() {
   //const [count, setCount] = useState(0)
 
   return (
-    <>
+  
+    <CartProvider>
       <Navbar_hito/>
       <Header_hito/>
       <Routes>
@@ -54,7 +56,8 @@ function App() {
         />
    </Routes>
       <Footer/>   
-</>
+      </CartProvider>
+
   )
 }
 

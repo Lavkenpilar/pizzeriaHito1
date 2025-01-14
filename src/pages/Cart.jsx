@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
-import { pizzaCart } from '../pizzas.js'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+//import { pizzaCart } from '../pizzas.js'
 
 const Cart = () => {
     //console.log (pizzaCart)
-    const [cart, setCart]=useState(pizzaCart)
+   // const [cart, setCart]=useState(pizzaCart)
+
+   const { cart, setCart }= useContext(CartContext)
 
     const handleAgregar = (indice) =>{
      cart [indice].count++

@@ -8,11 +8,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import ReactDOM from 'react-dom';
 import formatNumber from '../utils/formatNumber';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import  { CartContext } from '../context/CartContext'
 
 
 const Navbar_hito = () => {
-  const total = 19190
-     let token = false
+  const { cart }= useContext(CartContext)
+  const total = cart.reduce ((total, pizza)=>total+(pizza.price*pizza.count),0)
+     let token = true
     const text1= "🔐Login"
     const text2= "🔐Register"
     const text3 = "🔓Profile" 
