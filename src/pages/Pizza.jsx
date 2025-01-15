@@ -1,21 +1,15 @@
-import React, { useState, useEffect } from "react"
+import { useContext } from 'react'
 import CardPizza from '../components/CardPizza'
+import { PizzaContext } from '../context/PizzaContext'
+
 
 const Pizza = () => {
 
-  const [pizza, setPizza]=useState({});
+  const{pizza}= useContext (PizzaContext)
 
-  useEffect (()=>{
-    fetch ('http://localhost:5000/api/pizzas/p001')
-    .then((res)=>res.json())
-    .then ((data)=>{
-      setPizza(data)
-      console.log (data)
-    })
-    },[])
     
   return (
-    <>
+    
     
     <div className = "galeria">
     {pizza.id ? (
@@ -32,7 +26,7 @@ const Pizza = () => {
       <p> cargando...</p>  
   )}
    </div>
-   </>
+   
   )
 }
 
