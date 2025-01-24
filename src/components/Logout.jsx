@@ -1,13 +1,8 @@
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
-
+import React from 'react'
 
 const Logout = () => {
-
-const { logout } = useContext (UserContext)
-
   return (
-    logout
+    <div>Logout</div>
   )
 }
 

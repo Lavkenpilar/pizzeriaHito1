@@ -1,7 +1,9 @@
-import { Route, Routes} from "react-router-dom"
+import { Navigate, Route, Routes} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useContext } from "react";
+import { UserContext } from "./context/UserContext";
 
 /*import ReactDOM from 'react-dom'*/
 import Navbar_hito from './components/Navbar_hito';
@@ -21,6 +23,8 @@ import Logout from "./components/Logout";
 function App() {
   //const [count, setCount] = useState(0)
 
+  const { token } = useContext (UserContext)
+
   return (
   
    <>
@@ -33,11 +37,11 @@ function App() {
         />
         <Route
         path="/register"
-        element={<Register/>}
+        element={ token ? <Register/> : <Home/>}
         />
         <Route
         path="/login"
-        element={<Login/>}
+        element={ token ? <Login/> : <Home/>}
         />
         <Route
         path="/cart"
@@ -49,7 +53,7 @@ function App() {
         />
         <Route
         path="/profile"
-        element={<Profile/>}
+        element={token ? <Profile/> : <Navigate to="/login"/>}
         />
         <Route
         path="/logout"
