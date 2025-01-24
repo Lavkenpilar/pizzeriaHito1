@@ -14,7 +14,7 @@ import Cart from './pages/Cart'
 import Pizza from './pages/Pizza';
 import NotFound from "./components/NotFound";
 import Profile from "./components/Profile";
-import { PizzaContext } from "./context/PizzaContext";
+import Logout from "./components/Logout";
 
 
 
@@ -51,10 +51,10 @@ function App() {
         path="/profile"
         element={<Profile/>}
         />
-       {/* <Route
-        path="/pizzaContext/:id"
-        element= {<PizzaContext/>}
-        />*/}
+        <Route
+        path="/logout"
+        element={<Logout/>}
+        />
         <Route
         path="/*"
         element={<NotFound/>}
