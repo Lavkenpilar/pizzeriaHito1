@@ -14,6 +14,7 @@ import Cart from './pages/Cart'
 import Pizza from './pages/Pizza';
 import NotFound from "./components/NotFound";
 import Profile from "./components/Profile";
+import { PizzaContext } from "./context/PizzaContext";
 
 
 
@@ -43,13 +44,17 @@ function App() {
         element=  {<Cart/>}
         />
         <Route
-        path="/pizza/001"
+        path="/pizza/:id"
         element={<Pizza/>}
         />
         <Route
         path="/profile"
         element={<Profile/>}
         />
+       {/* <Route
+        path="/pizzaContext/:id"
+        element= {<PizzaContext/>}
+        />*/}
         <Route
         path="/*"
         element={<NotFound/>}

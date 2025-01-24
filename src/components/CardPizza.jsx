@@ -1,14 +1,20 @@
 import React from 'react'
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import formatNumber from '../utils/formatNumber';
+import Pizza from '../pages/Pizza';
 
 const CardPizza = ({price, img, id, name, desc, ingredients}) => {
   const numberPrice = Number (price)
   
   const {handleAñadir } = useContext(CartContext)
+
+  const clickIp = () => {
+
+  }
 
  
  
@@ -16,8 +22,9 @@ const CardPizza = ({price, img, id, name, desc, ingredients}) => {
     <Card style={{ width: '100%' }}>
       <Card.Img variant="top" src={img} />
       <Card.Body>
-        <p>{id}</p>
-        <Card.Title>{name}</Card.Title>
+      <p> {id} </p>
+  
+     <Card.Title>{name}</Card.Title>
         <Card.Text>
           <div className="descripción">
           {desc}
@@ -36,7 +43,7 @@ const CardPizza = ({price, img, id, name, desc, ingredients}) => {
       <Card.Footer style={{backgroundColor:'white'}}>
           <h4>Precio:{formatNumber (numberPrice)}</h4>
           <div className='botones'>
-          <Button variant="light" className="border border-dark">👀Ver más</Button>
+          <Link to={`/pizza/${id}`} variant="light" className="border border-dark">👀Ver más</Link>
           <Button variant="dark" onClick={()=> handleAñadir({ id, name, desc, price, img, ingredients })}>Añadir🛒</Button>
           </div>
         </Card.Footer>      
