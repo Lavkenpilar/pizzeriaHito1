@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import { UserContext } from '../context/UserContext'
+import Button from 'react-bootstrap/Button'
 //import { pizzaCart } from '../pizzas.js'
 
 const Cart = () => {
@@ -8,6 +10,8 @@ const Cart = () => {
    // const [cart, setCart]=useState(pizzaCart)
 
    const { cart, setCart }= useContext(CartContext)
+   const { token }= useContext (UserContext)
+   console.log (token)
 
     const handleAgregar = (indice) =>{
      cart [indice].count++
@@ -43,7 +47,7 @@ const Cart = () => {
            ))
            }
         <h3 className='subtitulo-total'> Llevas {totalPizzas} pizzas, el total es $ {totalGeneral} </h3>
-        <button className='boton-pagar'>Pagar</button>
+        <Button disabled={!token} variant= "primary">Pagar</Button>
         </>
       
       )}

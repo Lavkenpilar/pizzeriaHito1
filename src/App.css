@@ -108,6 +108,15 @@ justify-items:center;
   color: white;
   margin-bottom: 30px;
 }
+button.boton-apagado {
+  display: flex;
+  cursor: not-allowed;
+  border-radius: 10px;
+  background-color: grey;
+  color: white;
+  margin-bottom: 30px;
+  
+}
 .titulo-profile {
   color:darkblue;
   margin: 60px;

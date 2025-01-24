@@ -43,7 +43,7 @@ const CardPizza = ({price, img, id, name, desc, ingredients}) => {
       <Card.Footer style={{backgroundColor:'white'}}>
           <h4>Precio:{formatNumber (numberPrice)}</h4>
           <div className='botones'>
-          <Link to={`/pizza/${id}`} variant="light" className="border border-dark">👀Ver más</Link>
+          <Link to={`/pizza/${id}`} variant="light" className="btn btn-secondary">👀Ver más</Link>
           <Button variant="dark" onClick={()=> handleAñadir({ id, name, desc, price, img, ingredients })}>Añadir🛒</Button>
           </div>
         </Card.Footer>      
