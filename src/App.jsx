@@ -37,11 +37,11 @@ function App() {
         />
         <Route
         path="/register"
-        element={ token ? <Register/> : <Home/>}
+        element={ token ? <Register/> :<Navigate to="/"/> }
         />
         <Route
         path="/login"
-        element={ token ? <Login/> : <Home/>}
+        element={ <Login/>}
         />
         <Route
         path="/cart"
