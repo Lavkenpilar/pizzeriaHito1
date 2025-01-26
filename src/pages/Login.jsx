@@ -15,9 +15,7 @@ const { login } = useContext(UserContext)
 
   const handleSubmit = (e) => {
 e.preventDefault ()
-
 // validacion antes de enviar
-
 if (emailLogin.trim()==='' || claveLogin.trim()==='') {
       setErrorLogin ('Todos los campos son obligatorios')
       return 
@@ -26,7 +24,6 @@ if (emailLogin.trim()==='' || claveLogin.trim()==='') {
       setErrorLogin ('La contraseña debe tener al menos 6 carácteres')
       return
     }
-
     setErrorLogin ('')  
 
     // llamar a la función del login

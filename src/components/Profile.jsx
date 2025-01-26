@@ -1,12 +1,24 @@
-import React from 'react'
+import { useContext } from "react"
+import { UserContext } from "../context/UserContext"
 
 const Profile = () => {
+
+  const { user, logout } = useContext (UserContext)
+
   return (
 <div>
-    <h3 className='titulo-profile'>Has iniciado sesión como lavkenpilar@gmail.com</h3>
-    <button className='boton-profile'>Cerrar Sesión</button>
+  {user ? ( 
+    <>
+    <p className="parra-profile">Has iniciado sesión como: {user.email} </p>
+ <button 
+ className="boton-profile"
+ onClick={logout} 
+ >Cerrar Sesión </button>
+ </>
+  ):(
+      <p className="parra2-profile">Por favor inicia sesión con tu usuario</p>
+    )}
 </div>
-
   )
 }
 

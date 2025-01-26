@@ -17,6 +17,7 @@ import Pizza from './pages/Pizza';
 import NotFound from "./components/NotFound";
 import Profile from "./components/Profile";
 import Logout from "./components/Logout";
+import Pago from "./components/Pago";
 
 
 
@@ -58,6 +59,10 @@ function App() {
         <Route
         path="/logout"
         element={<Logout/>}
+        />
+        <Route
+        path="/pago"
+        element={<Pago/>}
         />
         <Route
         path="/*"

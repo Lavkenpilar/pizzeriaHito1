@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { UserContext } from '../context/UserContext'
+import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 //import { pizzaCart } from '../pizzas.js'
 
@@ -12,6 +13,7 @@ const Cart = () => {
    const { cart, setCart }= useContext(CartContext)
    const { token }= useContext (UserContext)
    console.log (token)
+   const navigate = useNavigate()
 
     const handleAgregar = (indice) =>{
      cart [indice].count++
@@ -28,6 +30,43 @@ const Cart = () => {
    
    const totalGeneral = cart.reduce ((total, pizza)=>total+(pizza.price*pizza.count),0)
   // console.log (totalGeneral)
+
+  // metodo para realizar el pago
+  const handlePayment = async () => {
+    if (!token){
+      alert ('Debes iniciar sesión para realizar el pago')
+      return
+    }
+    // crear los datos a enviar
+    const orderData = {
+      cart, // el carrito con todas las pizzas y cantidades
+      total: totalGeneral, // el total general de la compra
+    }
+    try {
+      const response = await fetch ('http://localhost:5000/api/checkouts',{
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json',
+          'Authorization':`Bearer ${token}`, // enviar el token en los encabezados para autenticacion
+        },
+        body: JSON.stringify(orderData), // convertir los datos del carrito a JSON
+      })
+      const data = await response.json ()
+      if (response.ok) {
+        //si el pago es exitoso, es posible mostrar un mensaje o redirigir
+        alert ('Pago exitoso.Gracias por tu compra!')
+        setCart ([]) // vaciar el carrito
+        //en este punto es posible redirigir al usuario a una pagina de confirmación de pago
+        navigate ('/pago')
+ } else {
+        // si el backend retorna un error
+        alert (data?.error || 'Hubo un problema con el pago, por favor inténtalo nuevamente')
+      }
+      } catch (error) {
+        console.log ('Error al procesar el pago:', error)
+        alert ('Hubo un error al procesar el pago')
+      }
+    }
    
   return (
     <>
@@ -47,7 +86,7 @@ const Cart = () => {
            ))
            }
         <h3 className='subtitulo-total'> Llevas {totalPizzas} pizzas, el total es $ {totalGeneral} </h3>
-        <Button disabled={!token} variant= "primary">Pagar</Button>
+        <Button disabled={!token} variant= "primary" onClick={handlePayment}>Pagar</Button>
         </>
       
       )}

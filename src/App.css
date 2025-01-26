@@ -117,13 +117,19 @@ button.boton-apagado {
   margin-bottom: 30px;
   
 }
-.titulo-profile {
+.parra-profile {
   color:darkblue;
   margin: 60px;
+  font-size: x-large;
 }
 .boton-profile {
   border-radius: 5px;
   background-color: black;
   color: white;
   margin-bottom: 30px;
+}
+.parra2-profile {
+  color:darkblue;
+  margin: 60px;
+  font-size: x-large;
 }
